@@ -1,16 +1,19 @@
-// sets constants for mocking up the text-based game board
-const blankLine = '  |   |  ';
-const guessLine = '1 |   |  ';
-const bombLine = '  | B |  ';
+const printBoard = board => {
+  var i = 0;
+  console.log('Current Board: ');
+  while (i < 3) {
+    console.log(board[i].join(' | '));
+    i++;
+  }
+};
 
-// builds the blank game board
-console.log('This is what an empty board would look like:');
-console.log(blankLine);
-console.log(blankLine);
-console.log(blankLine);
+const board = [
+  [' ', ' ', ' '],
+  [' ', ' ', ' '],
+  [' ', ' ', ' ']
+];
 
-// builds a game board with simulated user interaction displayed
-console.log('This is what a board with a guess and a bomb on it would look like:');
-console.log(guessLine);
-console.log(bombLine);
-console.log(blankLine);
+printBoard(board);
+board[0][1] = '1';
+board[2][2] = 'B'
+printBoard(board);
